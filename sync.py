@@ -64,9 +64,9 @@ def sync_col_a(table):
         #   table.append({})
         row = table[track - 1]
 
-        title1 = str(row['title_cn'] or row['title_en']
+        title1 = str(row['title_sc'] or row['title_en']
                      or row['title_jp'] or row['title_kr'])
-        title2 = str(row['title_en'] or row['title_cn'])
+        title2 = str(row['title_en'] or row['title_sc'])
 
         # title = title1
         # if title2 and title2 != title:
@@ -81,7 +81,7 @@ def sync_col_a(table):
         title = "{} ({})".format(
           title1, title2) if title2 and title2 != title1 and not title1.endswith(')') else title1
 
-        place1 = str(row['place_cn'] or row['place_en']
+        place1 = str(row['place_sc'] or row['place_en']
                      or row['place_jp'] or row['place_kr'])
         # place2 = str(row['place_en'])
         # place = "{} ({})".format(place1, place2) if place2 and place2 != place1 else place1
